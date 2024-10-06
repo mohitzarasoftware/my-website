@@ -1,0 +1,40 @@
+// Custom border-radius classes from 1px to 100px
+@for $i from 1 through 100 {
+    .br-#{$i} {
+      border-radius: #{$i}px !important;
+    }
+  }
+  
+  // Responsive custom border-radius classes
+  @media (min-width: 576px) { // For small devices and up
+    @for $i from 1 through 100 {
+      .br-sm-#{$i} {
+        border-radius: #{$i}px !important;
+      }
+    }
+  }
+  
+  @media (min-width: 768px) { // For medium devices and up
+    @for $i from 1 through 100 {
+      .br-md-#{$i} {
+        border-radius: #{$i}px !important;
+      }
+    }
+  }
+  
+  @media (min-width: 992px) { // For large devices and up
+    @for $i from 1 through 100 {
+      .br-lg-#{$i} {
+        border-radius: #{$i}px !important;
+      }
+    }
+  }
+  
+  @media (min-width: 1200px) { // For extra-large devices and up
+    @for $i from 1 through 100 {
+      .br-xl-#{$i} {
+        border-radius: #{$i}px !important;
+      }
+    }
+  }
+  

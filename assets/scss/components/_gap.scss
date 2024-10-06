@@ -1,0 +1,57 @@
+// Custom gap classes from 0px to 100px
+@gap-0 {
+  .gap-0 {
+    gap: 0px !important;
+  }
+}
+
+@for $i from 1 through 100 {
+  .gap-#{$i} {
+    gap: #{$i}px !important;
+  }
+}
+
+// Responsive custom gap classes
+@media (min-width: 576px) { // For small devices and up
+  .gap-sm-0 {
+    gap: 0px !important;
+  }
+  @for $i from 1 through 100 {
+    .gap-sm-#{$i} {
+      gap: #{$i}px !important;
+    }
+  }
+}
+
+@media (min-width: 768px) { // For medium devices and up
+  .gap-md-0 {
+    gap: 0px !important;
+  }
+  @for $i from 1 through 100 {
+    .gap-md-#{$i} {
+      gap: #{$i}px !important;
+    }
+  }
+}
+
+@media (min-width: 992px) { // For large devices and up
+  .gap-lg-0 {
+    gap: 0px !important;
+  }
+  @for $i from 1 through 100 {
+    .gap-lg-#{$i} {
+      gap: #{$i}px !important;
+    }
+  }
+}
+
+@media (min-width: 1200px) { // For extra-large devices and up
+  .gap-xl-0 {
+    gap: 0px !important;
+  }
+  @for $i from 1 through 100 {
+    .gap-xl-#{$i} {
+      gap: #{$i}px !important;
+    }
+  }
+}

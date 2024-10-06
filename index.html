@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jquery link -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="assets/libs/bootstrap/bootstrap.min.css">
+    <!-- main css  -->
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <!-- remix icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <!-- fixed button  -->
+    <button class="fixed-btn position-fixed border-0 py-8 fs-md-14 fs-13 text-white px-8 z-3 d-flex align-items-center gap-4" data-bs-toggle="modal" data-bs-target="#suggestion">
+        <i class="ri-question-line"></i> Any Suggestion
+    </button>
+
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-xl shadow-sm sticky-top" id="navbar" aria-label="Offcanvas navbar large">
+        <div class="container">
+            <a class="navbar-logo h-md-50 h-45" href="index.html">
+                <img src="assets/img/vokit-logo.svg" alt="logo" class=" img-fluid h-full w-full">
+            </a> 
+            <div class="offcanvas nav-offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+                <div class="offcanvas-header border-bottom">
+                    <div class="offcanvas-logo" id="offcanvasNavbar2Label">
+                        <img src="assets/img/logo.png" alt="logo" class="h-100 w-100 img-fluid">
+                    </div>
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav gap-35 align-items-center justify-content-center flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold p-0 overflow-hidden position-relative text-nowrap active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item position-relative drop-main">
+                            <a class="nav-link fw-semibold p-0 overflow-hidden position-relative text-nowrap d-flex align-items-center gap-3" href="javascript:;"> 
+                                Css Tools
+                                <i class="ri-arrow-down-s-fill fs-20"></i>
+                            </a>
+                            <ul class="drop-menu border list-unstyled br-10 position-absolute bg-white overflow-hidden rounded-1 overflow-y-auto">
+                                <li>
+                                    <a href="border-radius.html" class="drop-link d-flex align-items-center gap-6 fs-15 text-nowrap py-10 px-12 text-decoration-none fw-medium d-block position-relative border-bottom">
+                                        <img src="assets/img/border-radius.svg" alt="border-radius" class="h-15">
+                                        Css Border Radius
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="filter.html" class="drop-link d-flex align-items-center gap-6 fs-15 text-nowrap py-10 px-12 text-decoration-none fw-medium d-block position-relative border-bottom">
+                                        <img src="assets/img/filter.svg" alt="css filter" class="h-15">
+                                        Css Filter
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="gradient-bg.html" class="drop-link d-flex align-items-center gap-6 fs-15 text-nowrap py-10 px-12 text-decoration-none fw-medium d-block position-relative border-bottom">
+                                        <img src="assets/img/gradient-color.svg" alt="gradient-color" class="h-15">
+                                        Css Background Gradient
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="text-shadow.html" class="drop-link d-flex align-items-center gap-6 fs-15 text-nowrap py-10 px-12 text-decoration-none fw-medium d-block position-relative border-bottom">
+                                        <img src="assets/img/text-shadow.svg" alt="text shadow" class="h-15">
+                                        Css Text Shadow
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="box-shadow.html" class="drop-link d-flex align-items-center gap-6 fs-15 text-nowrap py-10 px-12 text-decoration-none fw-medium d-block position-relative border-bottom">
+                                        <img src="assets/img/box-shadow.svg" alt="box shadow" class="h-15">
+                                        Css Box Shadow
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="transform.html" class="drop-link d-flex align-items-center gap-6 fs-15 text-nowrap py-10 px-12 text-decoration-none fw-medium d-block position-relative border-bottom">
+                                        <img src="assets/img/transform.svg" alt=" Css Transform" class="h-15">
+                                        Css Transform
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item position-relative drop-main">
+                            <a class="nav-link fw-semibold p-0 overflow-hidden position-relative text-nowrap d-flex align-items-center gap-3" href="javascript:;"> 
+                                Image Tools
+                                <i class="ri-arrow-down-s-fill fs-20"></i>
+                            </a>
+                            <ul class="drop-menu border list-unstyled br-10 position-absolute bg-white overflow-hidden rounded-1 overflow-y-auto">
+                                <li>
+                                    <a href="bg-remove.html" class="drop-link d-flex align-items-center gap-6 fs-15 text-nowrap py-10 px-12 text-decoration-none fw-medium d-block position-relative border-bottom">
+                                        <img src="assets/img/bg-remove.svg" alt="Image Bg Remove" class="h-15">
+                                        Image Bg Remove
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="img-compress.html" class="drop-link d-flex align-items-center gap-6 fs-15 text-nowrap py-10 px-12 text-decoration-none fw-medium d-block position-relative border-bottom">
+                                        <img src="assets/img/image-compress.svg" alt="compress image" class="h-15">
+                                        Image Compress
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="img-resize.html" class="drop-link d-flex align-items-center gap-6 fs-15 text-nowrap py-10 px-12 text-decoration-none fw-medium d-block position-relative border-bottom">
+                                        <img src="assets/img/img-resizer.svg" alt="img resizer" class="h-15">
+                                        Image Resize
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="img-crop.html" class="drop-link d-flex align-items-center gap-6 fs-15 text-nowrap py-10 px-12 text-decoration-none fw-medium d-block position-relative border-bottom">
+                                        <img src="assets/img/img-crop.svg" alt="img crop" class="h-15">
+                                        Image Crop
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold p-0 overflow-hidden position-relative text-nowrap" aria-current="page" href="img-convert.html">Image Convert</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="d-flex align-items-center gap-sm-3 gap-2">
+                <button class="navbar-toggler shadow-none d-xl-none border-0 fs-25 d-flex align-items-center justify-content-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbaroffcanvas" aria-controls="navbaroffcanvas" aria-label="Toggle navigation">
+                    <i class="ri-menu-4-line"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar end -->
+
+    <!-- services section start -->
+    <section class="services-section mt-md-45 mt-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="main-heading text-center">
+                        <div class="mb-5 heading fw-bold fs-lg-28 fs-md-24 fs-20">
+                            Image Tools
+                        </div>
+                        <div class="heading-title">
+                            we is your universal app for file conversions. We support nearly all audio, video, document, ebook, archive, image, spreadsheet,
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-8 g-3">
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card text-center p-12 border br-6 position-relative overflow-hidden bg-white">
+                        <div class="service-icon mx-auto h-40 w-40 rounded-circle">
+                            <img src="assets/img/bg-remove.svg" alt="remove background" class="h-full w-full">
+                        </div>
+                        <div class="service-card-heading fw-semibold fs-17 mt-10">
+                            Image Bg Remove
+                        </div>
+                        <p class="mb-0 mt-5 fs-14 lh-23">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, cupiditate.
+                        </p>
+                        <a href="" class="d-flex align-items-center fw-semibold fs-15 text-decoration-none mt-12 service-card-link stretched-link mx-auto">
+                            Read More
+                            <i class="ri-arrow-right-line fs-16"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card text-center p-12 border br-6 position-relative overflow-hidden bg-white">
+                        <div class="service-icon mx-auto h-45 w-45 rounded-circle">
+                            <img src="assets/img/image-compress.svg" alt="image compress" class="h-full w-full">
+                        </div>
+                        <div class="service-card-heading fw-semibold fs-17 mt-10">
+                            Image Compress
+                        </div>
+                        <p class="mb-0 mt-5 fs-14 lh-23">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, cupiditate.
+                        </p>
+                        <a href="" class="d-flex align-items-center fw-semibold fs-15 text-decoration-none mt-12 service-card-link stretched-link mx-auto">
+                            Read More
+                            <i class="ri-arrow-right-line fs-16"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card text-center p-12 border br-6 position-relative overflow-hidden bg-white">
+                        <div class="service-icon mx-auto h-40 w-40 rounded-circle">
+                            <img src="assets/img/img-resizer.svg" alt="image resize" class="h-full w-full">
+                        </div>
+                        <div class="service-card-heading fw-semibold fs-17 mt-10">
+                            Image Resize
+                        </div>
+                        <p class="mb-0 mt-5 fs-14 lh-23">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, cupiditate.
+                        </p>
+                        <a href="" class="d-flex align-items-center fw-semibold fs-15 text-decoration-none mt-12 service-card-link stretched-link mx-auto">
+                            Read More
+                            <i class="ri-arrow-right-line fs-16"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card text-center p-12 border br-6 position-relative overflow-hidden bg-white">
+                        <div class="service-icon mx-auto h-40 w-40 rounded-circle">
+                            <img src="assets/img/img-crop.svg" alt="image crop" class="h-full w-full">
+                        </div>
+                        <div class="service-card-heading fw-semibold fs-17 mt-10">
+                            Image Crop
+                        </div>
+                        <p class="mb-0 mt-5 fs-14 lh-23">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, cupiditate.
+                        </p>
+                        <a href="" class="d-flex align-items-center fw-semibold fs-15 text-decoration-none mt-12 service-card-link stretched-link mx-auto">
+                            Read More
+                            <i class="ri-arrow-right-line fs-16"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- services section end -->
+
+    <!-- services section start -->
+    <section class="services-section mt-md-45 mt-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="main-heading text-center">
+                        <div class="mb-5 heading fw-bold fs-lg-28 fs-md-24 fs-20">
+                            Edit Image Tools
+                        </div>
+                        <div class="heading-title">
+                            we is your universal app for file conversions. We support nearly all audio, video, document, ebook, archive, image, spreadsheet,
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-8 g-3">
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card text-center p-12 border br-6 position-relative overflow-hidden bg-white">
+                        <div class="service-icon mx-auto h-40 w-40 rounded-circle">
+                            <img src="assets/img/border-radius.svg" alt="border-radius" class="h-full w-full">
+                        </div>
+                        <div class="service-card-heading fw-semibold fs-17 mt-10">
+                            Css Border Radius
+                        </div>
+                        <p class="mb-0 mt-5 fs-14 lh-23">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, cupiditate.
+                        </p>
+                        <a href="" class="d-flex align-items-center fw-semibold fs-15 text-decoration-none mt-12 service-card-link stretched-link mx-auto">
+                            Read More
+                            <i class="ri-arrow-right-line fs-16"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card text-center p-12 border br-6 position-relative overflow-hidden bg-white">
+                        <div class="service-icon mx-auto h-40 w-40 rounded-circle">
+                            <img src="assets/img/border-radius.svg" alt="border-radius" class="h-full w-full">
+                        </div>
+                        <div class="service-card-heading fw-semibold fs-17 mt-10">
+                            CSS filter
+                        </div>
+                        <p class="mb-0 mt-5 fs-14 lh-23">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, cupiditate.
+                        </p>
+                        <a href="" class="d-flex align-items-center fw-semibold fs-15 text-decoration-none mt-12 service-card-link stretched-link mx-auto">
+                            Read More
+                            <i class="ri-arrow-right-line fs-16"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card text-center p-12 border br-6 position-relative overflow-hidden bg-white">
+                        <div class="service-icon mx-auto h-40 w-40 rounded-circle">
+                            <img src="assets/img/border-radius.svg" alt="border-radius" class="h-full w-full">
+                        </div>
+                        <div class="service-card-heading fw-semibold fs-17 mt-10">
+                            CSS Gradient Background
+                        </div>
+                        <p class="mb-0 mt-5 fs-14 lh-23">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, cupiditate.
+                        </p>
+                        <a href="" class="d-flex align-items-center fw-semibold fs-15 text-decoration-none mt-12 service-card-link stretched-link mx-auto">
+                            Read More
+                            <i class="ri-arrow-right-line fs-16"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card text-center p-12 border br-6 position-relative overflow-hidden bg-white">
+                        <div class="service-icon mx-auto h-40 w-40 rounded-circle">
+                            <img src="assets/img/border-radius.svg" alt="border-radius" class="h-full w-full">
+                        </div>
+                        <div class="service-card-heading fw-semibold fs-17 mt-10">
+                            CSS Text Shadow
+                        </div>
+                        <p class="mb-0 mt-5 fs-14 lh-23">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, cupiditate.
+                        </p>
+                        <a href="" class="d-flex align-items-center fw-semibold fs-15 text-decoration-none mt-12 service-card-link stretched-link mx-auto">
+                            Read More
+                            <i class="ri-arrow-right-line fs-16"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card text-center p-12 border br-6 position-relative overflow-hidden bg-white">
+                        <div class="service-icon mx-auto h-40 w-40 rounded-circle">
+                            <img src="assets/img/border-radius.svg" alt="border-radius" class="h-full w-full">
+                        </div>
+                        <div class="service-card-heading fw-semibold fs-17 mt-10">
+                            CSS Box Shadow
+                        </div>
+                        <p class="mb-0 mt-5 fs-14 lh-23">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, cupiditate.
+                        </p>
+                        <a href="" class="d-flex align-items-center fw-semibold fs-15 text-decoration-none mt-12 service-card-link stretched-link mx-auto">
+                            Read More
+                            <i class="ri-arrow-right-line fs-16"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card text-center p-12 border br-6 position-relative overflow-hidden bg-white">
+                        <div class="service-icon mx-auto h-40 w-40 rounded-circle">
+                            <img src="assets/img/border-radius.svg" alt="border-radius" class="h-full w-full">
+                        </div>
+                        <div class="service-card-heading fw-semibold fs-17 mt-10">
+                            CSS Transform
+                        </div>
+                        <p class="mb-0 mt-5 fs-14 lh-23">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, cupiditate.
+                        </p>
+                        <a href="" class="d-flex align-items-center fw-semibold fs-15 text-decoration-none mt-12 service-card-link stretched-link mx-auto">
+                            Read More
+                            <i class="ri-arrow-right-line fs-16"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- services section end -->
+
+    <!-- why choose us section start -->
+    <section class="why-choose-section mt-md-45 mt-40 py-md-45 py-35 bg-light border-top border-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 mx-auto">
+                    <div class="main-heading text-center">
+                        <div class="mb-5 heading fw-bold fs-lg-28 fs-md-24 fs-20">
+                            Why Choose Us
+                        </div>
+                        <div class="heading-title fs-md-16 fs-15 lh-26">
+                            Discover free, secure, and easy tools for CSS and image conversion. Designed to simplify and elevate your projects effortlessly!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 g-3">
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-choose-card p-md-12 p-10 h-full border br-5 d-flex gap-12">
+                        <div class="why-choose-icon h-md-42 h-30">
+                            <img src="assets/img/security-icon.svg" alt="security-icon" class="h-full wfull">
+                        </div>
+                        <div>
+                            <div class="fw-semibold fs-1md-17 fs-16 why-choose-heading">
+                                100% Secure Tools
+                            </div>
+                            <p class="mb-0 fs-md-15 fs-14 lh-md-25 lh-23 mt-md-5 mt-4">Your data is always safe with us. We prioritize your privacy with advanced security measures.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-choose-card p-md-12 p-10 h-full border br-5 d-flex gap-12">
+                        <div class="why-choose-icon h-md-42 h-30">
+                            <img src="assets/img/easy-to-use.svg" alt="security-icon" class="h-full wfull">
+                        </div>
+                        <div>
+                            <div class="fw-semibold fs-1md-17 fs-16 why-choose-heading">
+                                Easy to Use
+                            </div>
+                            <p class="mb-0 fs-md-15 fs-14 lh-md-25 lh-23 mt-md-5 mt-4">Our intuitive interface makes it simple for anyone to use our tools without technical skills.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-choose-card p-md-12 p-10 h-full border br-5 d-flex gap-12">
+                        <div class="why-choose-icon h-md-42 h-30">
+                            <img src="assets/img/security-icon.svg" alt="security-icon" class="h-full wfull">
+                        </div>
+                        <div>
+                            <div class="fw-semibold fs-1md-17 fs-16 why-choose-heading">
+                                User-Friendly Experience
+                            </div>
+                            <p class="mb-0 fs-md-15 fs-14 lh-md-25 lh-23 mt-md-5 mt-4">Navigate our tools easily with an intuitive design that requires no technical expertise. Start creating in seconds!</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-choose-card p-md-12 p-10 h-full border br-5 d-flex gap-12">
+                        <div class="why-choose-icon h-md-42 h-30">
+                            <img src="assets/img/security-icon.svg" alt="security-icon" class="h-full wfull">
+                        </div>
+                        <div>
+                            <div class="fw-semibold fs-1md-17 fs-16 why-choose-heading">
+                                Completely Free
+                            </div>
+                            <p class="mb-0 fs-md-15 fs-14 lh-md-25 lh-23 mt-md-5 mt-4">Access all our features at no cost—no subscriptions, no hidden fees. Enjoy everything we offer without financial concerns.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-choose-card p-md-12 p-10 h-full border br-5 d-flex gap-12">
+                        <div class="why-choose-icon h-md-42 h-30">
+                            <img src="assets/img/security-icon.svg" alt="security-icon" class="h-full wfull">
+                        </div>
+                        <div>
+                            <div class="fw-semibold fs-1md-17 fs-16 why-choose-heading">
+                                Fast Performance
+                            </div>
+                            <p class="mb-0 fs-md-15 fs-14 lh-md-25 lh-23 mt-md-5 mt-4">Experience lightning-fast processing for all your tasks. Our tools deliver quick results, helping you stay efficient.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-choose-card p-md-12 p-10 h-full border br-5 d-flex gap-12">
+                        <div class="why-choose-icon h-md-42 h-30">
+                            <img src="assets/img/security-icon.svg" alt="security-icon" class="h-full wfull">
+                        </div>
+                        <div>
+                            <div class="fw-semibold fs-1md-17 fs-16 why-choose-heading">
+                                No Downloads Needed
+                            </div>
+                            <p class="mb-0 fs-md-15 fs-14 lh-md-25 lh-23 mt-md-5 mt-4">Use our tools directly in your browser without the need to download any software. It’s hassle-free and convenient!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- why choose us section end -->
+
+    <!-- content section start -->
+    <section class="content-section mt-md-45 mt-35">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 mx-auto">
+                    <div class="main-heading text-center">
+                        <div class="mb-5 heading fw-bold fs-lg-28 fs-md-24 fs-20">
+                            Content section
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="content-card">
+                        <div class="read_more_text show-few-lines">
+                            <p style="text-align: justify;">Planning Oman? Undoubtedly a great choice to spend your holidays or meet up with your family and friends and make every moment count. To visit Oman, you will need to <strong>Apply Oman visa</strong> before you begin your journey so tag along to understand more about Oman Visa and how you can obtain the best Oman e visa that will suit your travel needs.&nbsp;</p>
+                            <h2 style="text-align: justify;">What Is The Oman evisa?</h2>
+                            <p style="text-align: justify;">A soft copy of a legal document that grants the eligible foreign visitors to come and stay on its land for a fixed number of days is the <strong>Oman eVisa</strong>. To apply, one must fill in an Application Form and meet all the eligibility criteria set by the government and the immigration department. Once the application is submitted, the details will go through strict checking and verification and once complete, your visa application will be approved and your Visa will be sent to you.</p>
+                            <h2 style="text-align: justify;">Oman Visas Types That You Can Apply Online</h2>
+                            <p style="text-align: justify;">There are a few types of Oman e Visa available for anyone to apply, you can check the <strong>Oman tourist visa</strong> that suits you the best and proceed with getting your eVisa.</p>
+                            <p style="text-align: justify;"><strong>10 Days Single Entry Visa -</strong> Perfect choice without a second thought in mind for those looking forward to a short trip to Oman for tourism or visiting purposes. This Visa grants a stay of 10 days with a single entry and is valid for 90 days from the date of issuance.&nbsp;</p>
+                            <p style="text-align: justify;"><strong>30 Days Single Entry Visa -</strong> Valid for 90 days, this Visa will allow you to stay a little longer in Oman that is for a time period of 30 Days in the country. Best for those who are visiting Oman for meeting family or friends but at the same time, this is also a better choice for travelers that are in search of more time to explore Oman and stay for a longer period of time.</p>
+                            <h2 style="text-align: justify;">Who Needs A Visa For Oman?</h2>
+                            <p style="text-align: justify;">When it comes to traveling internationally, everyone will need a Visa in order to be granted a stay on foreign lands. Citizens of all eligible countries will require a valid Visa to enter and stay in Oman and the duration of stay will be strictly followed as per the visa that one has applied for.&nbsp;</p>
+                            <p style="text-align: justify;">The citizens of the GCC countries are not required to Apply Oman visa as they can freely enter this Nation without any issues or Visas required.</p>
+                            <p style="text-align: justify;"><em><strong>Tip :</strong> Apply for a Visa through us and get it delivered before the deadline. We work directly with the immigration department to minimize processing time and we have an approval rate of 99.9% which is the highest in this industry.</em></p>
+                            <h2 style="text-align: justify;">Oman Visa Application Requirements&nbsp;</h2>
+                            <p style="text-align: justify;">To be eligible, you will need to fill the criteria below.</p>
+                            <ul>
+                            <li style="text-align: justify;">Your Passport Must Be Issued By An Eligible Country.</li>
+                            <li style="text-align: justify;">Your Passport Must Be Valid For At-least 6 Months.</li>
+                            <li style="text-align: justify;">You Must Submit A Passport-Size Photo On A Plain Background.</li>
+                            <li style="text-align: justify;">Your Personal Details Such As Your Name And Date Of Birth Will Be Needed.</li>
+                            <li style="text-align: justify;">A Valid Email Address Which Will Be Used To Receive Your Visa Is Required.</li>
+                            <li style="text-align: justify;">Must Have A Clean Track Of Criminal Records.</li>
+                            <li style="text-align: justify;">Enough Funds To Support You Throughout The Trip.</li>
+                            </ul>
+                            <p style="text-align: justify;">If you have these <strong>Oman visa requirements</strong> fulfilled, you can easily apply for an eVisa.</p>
+                            <h2 style="text-align: justify;">Do Transit And Ship Passengers Need An Oman Visa?</h2>
+                            <p style="text-align: justify;">If the layover between flights and the time needed for the ships to pass by is less than 6 hours, an in-transit visa is not required and if the layover is within 24 hours but more than the 6 hours threshold, a visa on arrival will be granted to all the passengers for not more than 24 hours. If you wish to explore Oman in between your flights, you can apply for an in-transit Visa.</p>
+                            <h2 style="text-align: justify;">Application Steps - How to Get the Online Oman Visa</h2>
+                            <p style="text-align: justify;">To apply for an Oman Visa Online, you will just need to follow these oman visa application steps below and in no time, you will have applied for your Visa.</p>
+                            <ul>
+                            <li style="text-align: justify;">Visit VokiT.com</li>
+                            <li style="text-align: justify;">Fill in the details - your current country and your country of origin.</li>
+                            <li style="text-align: justify;">Select from the types of visa available for application.</li>
+                            <li style="text-align: justify;">Move ahead and upload all the required documents.</li>
+                            <li style="text-align: justify;">Simply pay for your visa in the next step and you are all set with the application.</li>
+                            </ul>
+                            <p style="text-align: justify;"><strong>Note : </strong>Residents of Iran, Iraq, Afghanistan and Pakistan will need to submit their National ID if requested as a part of the verification processes by the immigration team.</p>
+                            <h2 style="text-align: justify;">Why Travel to Oman With an eVisa?</h2>
+                            <p style="text-align: justify;">We recommend a visa in electronic form as anyone can easily apply for a Visa with ease through the comfort of their home by spending just a few minutes which also saves the runaround as compared to the application through the local Embassy.</p>
+                            <p style="text-align: justify;">As the Oman visa on arrival no longer remains an option, it is better to not leave any way of trouble or inconvenience come your way on your Oman Visit.</p>
+                            <p style="text-align: justify;">Traveling with an eVisa also removes the headache of carrying a physical Visa and this can be easily stored on your smartphone for easy access at the time when you need it.</p>
+                            <h2 style="text-align: justify;">Travel to Oman With an e-Visa</h2>
+                            <p style="text-align: justify;">Traveling with an eVisa is not a problem in the modern age. With everything being accessible on the smartphone, a visa can easily be stored on your device without the fear of getting torn apart or lost in the trip which might ruin the complete trip.</p>
+                            <p style="text-align: justify;">One can easily provide their Visa through a smartphone whenever asked as it has the same authenticity as a physical Visa.</p>
+                            <h2 style="text-align: justify;">When to Apply: Oman Visa Processing Time</h2>
+                            <p style="text-align: justify;">Normally, visa application may take time so it is always better to apply beforehand to avoid any inconvenience at the time of travel. However, if the need of visa arises urgently, one can easily apply for an urgent eVisa for Oman with us.&nbsp;</p>
+                            <p style="text-align: justify;">The standard service will deliver your Oman eVisa within 48-72 business hours ( 2-3 Business Days ) and on the other hand, one can also apply for an urgent Oman eVisa and have it delivered to your email within just 4 hours.</p>
+                            <h2 style="text-align: justify;">What to Do With An eVisa In Oman</h2>
+                            <p style="text-align: justify;">Offering the same authenticity as the physical Visa, with an eVisa, you can explore the nation of Oman freely or pay a visit to your friends and family. There are no limitations if you opt for an eVisa to visit Oman and the possibilities are endless. Go and explore the nation without any restrictions with the eVisa in hand!</p>
+                            <h2 style="text-align: justify;">Additional information on the Oman eVisa</h2>
+                            <p style="text-align: justify;">To better understand, here are some additional things to understand the Online Oman Visa better.</p>
+                            <ul>
+                            <li style="text-align: justify;">In case of loss, theft or expiry, you will need to apply for a new Visa.</li>
+                            <li style="text-align: justify;">Oman Visa does not allow individuals to work in Oman, you can use the visa for tourism, business or get-together purposes.</li>
+                            <li style="text-align: justify;">There will be an overstaying charge of 10 OMR per day without a valid visa in Oman.</li>
+                            </ul>
+                            <p style="text-align: justify;">Incase of any doubts, suggestions or queries, feel free to contact our team and we will be right at your service.</p>
+                            <h2 style="text-align: justify;">Travel Checklist</h2>
+                            <p style="text-align: justify;">After landing in Oman, please make sure to keep these points in mind for smooth entry to Oman:</p>
+                            <ul>
+                            <li style="text-align: justify;">You have to carry the declaration form in your hand that was provided to you while you were in the flight.</li>
+                            <li style="text-align: justify;">If the Immigration officer asks, keep your travel documents like air tickets, passport, hotel bookings, Oman visa online, ID and other documents handy to present to the officer.</li>
+                            <li style="text-align: justify;">If you are an unaccompanied minor, make sure that you stay with the flight attendant .</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- content section end -->
+
+    <!-- faq section start -->
+    <section class="faq-section mt-md-45 mt-40 py-md-45 py-35 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mx-auto">
+                    <div class="main-heading text-center">
+                        <div class="mb-5 heading fw-bold fs-lg-28 fs-md-24 fs-20">
+                            Frequently Asked Question
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-10">
+                <div class="col-12">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                          <div class="accordion-header">
+                            <button class="accordion-button fs-md-16 fs-15 p-md-14 p-12 fw-medium shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              Accordion Item #1
+                            </button>
+                          </div>
+                          <div id="collapseOne" class="accordion-collapse border-top collapse show" data-bs-parent="#accordionExample">
+                            <div class="accordion-body p-md-14 p-12">
+                              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <div class="accordion-header">
+                            <button class="accordion-button fs-md-16 fs-15 p-md-14 p-12 fw-medium shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              Accordion Item #2
+                            </button>
+                          </div>
+                          <div id="collapseTwo" class="accordion-collapse border-top collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body p-md-14 p-12">
+                              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <div class="accordion-header">
+                            <button class="accordion-button fs-md-16 fs-15 p-md-14 p-12 fw-medium shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              Accordion Item #3
+                            </button>
+                          </div>
+                          <div id="collapseThree" class="accordion-collapse border-top collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body p-md-14 p-12">
+                              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- faq section end -->
+
+    <!-- footer section start -->
+    <footer class="footer py-15">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <p class="footer-text fs-md-14 fs-13 text-center mb-0 text-white">2024 All Country Visa. All Right Reserved A project by Visa Commit</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer section end -->
+
+    <!-- script links  -->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/libs/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <!-- quiry modal  -->
+    <div class="modal fade query-modal" id="suggestion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title fs-md-18 fs-17 fw-semibold" id="exampleModalLabel">Any Suggestion & Query</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="row gap-md-16 gap-12">
+                            <div class="col-12">
+                                <div>
+                                    <label for="name" class="fw-medium mb-2 fs-md-16 fs-15">Name</label>
+                                    <input type="text" id="name" class="form-control shadow-none h-42 fs-md-15 fs-14" placeholder="Enter Your Name">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div>
+                                    <label for="email" class="fw-medium mb-2 fs-md-16 fs-15">Email</label>
+                                    <input type="email" id="email" class="form-control shadow-none h-42 fs-md-15 fs-14" placeholder="Enter Your Email">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div>
+                                    <label for="msg" class="fw-medium mb-2 fs-md-16 fs-15">Message</label>
+                                    <textarea name="" id="msg" class="form-control shadow-none h-80" placeholder=" Your Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <button type="submit" class="query-modal-btn border-0 py-8 px-30 br-5">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- navbar offcanvs  -->
+    <div class="offcanvas offcanvas-start navbar-offcanvas" tabindex="-1" id="navbaroffcanvas" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header border-bottom">
+            <div class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</div>
+            <button type="button" class="btn-close fs-13 shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav gap-12 justify-content-center flex-grow-1 accordion" id="navbarmenu">
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold p-0 overflow-hidden position-relative text-nowrap active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item position-relative drop-main">
+                    <a class="nav-link fw-semibold p-0 overflow-hidden position-relative text-nowrap d-flex align-items-center gap-3 collapsed justify-content-between" href="javascript:;" type="button" data-bs-toggle="collapse" data-bs-target="#csstools" aria-expanded="true" aria-controls="csstools"> 
+                        Css Tools
+                        <i class="ri-arrow-down-s-fill fs-20"></i>
+                    </a>
+                    <div id="csstools" class="accordion-collapse collapse" data-bs-parent="#navbarmenu">
+                        <ul class="drop-menu list-unstyled br-10 bg-white overflow-hidden rounded-1 overflow-y-auto">
+                            <li>
+                                <a href="border-radius.html" class="drop-link d-flex align-items-center gap-6 fs-14 text-nowrap py-9 px-4 text-decoration-none fw-medium d-block position-relative">
+                                    <img src="assets/img/border-radius.svg" alt="border-radius" class="h-12">
+                                    Css Border Radius
+                                </a>
+                            </li>
+                            <li>
+                                <a href="filter.html" class="drop-link d-flex align-items-center gap-6 fs-14 text-nowrap py-9 px-4 text-decoration-none fw-medium d-block position-relative">
+                                    <img src="assets/img/filter.svg" alt="css filter" class="h-12">
+                                    Css Filter
+                                </a>
+                            </li>
+                            <li>
+                                <a href="gradient-bg.html" class="drop-link d-flex align-items-center gap-6 fs-14 text-nowrap py-9 px-4 text-decoration-none fw-medium d-block position-relative">
+                                    <img src="assets/img/gradient-color.svg" alt="gradient-color" class="h-12">
+                                    Css Background Gradient
+                                </a>
+                            </li>
+                            <li>
+                                <a href="text-shadow.html" class="drop-link d-flex align-items-center gap-6 fs-14 text-nowrap py-9 px-4 text-decoration-none fw-medium d-block position-relative">
+                                    <img src="assets/img/text-shadow.svg" alt="text shadow" class="h-12">
+                                    Css Text Shadow
+                                </a>
+                            </li>
+                            <li>
+                                <a href="box-shadow.html" class="drop-link d-flex align-items-center gap-6 fs-14 text-nowrap py-9 px-4 text-decoration-none fw-medium d-block position-relative">
+                                    <img src="assets/img/box-shadow.svg" alt="box shadow" class="h-12">
+                                    Css Box Shadow
+                                </a>
+                            </li>
+                            <li>
+                                <a href="transform.html" class="drop-link d-flex align-items-center gap-6 fs-14 text-nowrap py-9 px-4 text-decoration-none fw-medium d-block position-relative">
+                                    <img src="assets/img/transform.svg" alt=" Css Transform" class="h-12">
+                                    Css Transform
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item position-relative drop-main">
+                    <a class="nav-link fw-semibold p-0 overflow-hidden position-relative text-nowrap d-flex align-items-center gap-3 collapsed justify-content-between" href="javascript:;" type="button" data-bs-toggle="collapse" data-bs-target="#imgtools" aria-expanded="true" aria-controls="imgtools"> 
+                        Image Tools
+                        <i class="ri-arrow-down-s-fill fs-20"></i>
+                    </a>
+                    <div id="imgtools" class="accordion-collapse collapse" data-bs-parent="#navbarmenu">
+                        <ul class="drop-menu list-unstyled br-10 bg-white overflow-hidden rounded-1 overflow-y-auto">
+                            <li>
+                                <a href="bg-remove.html" class="drop-link d-flex align-items-center gap-6 fs-14 text-nowrap py-9 px-4 text-decoration-none fw-medium d-block position-relative">
+                                    <img src="assets/img/bg-remove.svg" alt="Image Bg Remove" class="h-12">
+                                    Image Bg Remove
+                                </a>
+                            </li>
+                            <li>
+                                <a href="img-compress.html" class="drop-link d-flex align-items-center gap-6 fs-14 text-nowrap py-9 px-4 text-decoration-none fw-medium d-block position-relative">
+                                    <img src="assets/img/image-compress.svg" alt="compress image" class="h-12">
+                                    Image Compress
+                                </a>
+                            </li>
+                            <li>
+                                <a href="img-resize.html" class="drop-link d-flex align-items-center gap-6 fs-14 text-nowrap py-9 px-4 text-decoration-none fw-medium d-block position-relative">
+                                    <img src="assets/img/img-resizer.svg" alt="img resizer" class="h-12">
+                                    Image Resize
+                                </a>
+                            </li>
+                            <li>
+                                <a href="img-crop.html" class="drop-link d-flex align-items-center gap-6 fs-14 text-nowrap py-9 px-4 text-decoration-none fw-medium d-block position-relative">
+                                    <img src="assets/img/img-crop.svg" alt="img crop" class="h-12">
+                                    Image Crop
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold p-0 overflow-hidden position-relative text-nowrap" aria-current="page" href="img-convert.html">Image Convert</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>

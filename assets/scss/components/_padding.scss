@@ -1,0 +1,60 @@
+// Padding for all sides, left, right, top, bottom, inline (x), and block (y) from 1px to 100px
+@for $i from 1 through 100 {
+    .p-#{$i} { padding: #{$i}px !important; }
+    .pl-#{$i} { padding-left: #{$i}px !important; }
+    .pr-#{$i} { padding-right: #{$i}px !important; }
+    .pt-#{$i} { padding-top: #{$i}px !important; }
+    .pb-#{$i} { padding-bottom: #{$i}px !important; }
+    .px-#{$i} { padding-inline: #{$i}px !important; }
+    .py-#{$i} { padding-block: #{$i}px !important; }
+  }
+  
+  // Responsive padding classes
+  @media (min-width: 576px) { // Small devices and up
+    @for $i from 1 through 100 {
+      .p-sm-#{$i} { padding: #{$i}px !important; }
+      .pl-sm-#{$i} { padding-left: #{$i}px !important; }
+      .pr-sm-#{$i} { padding-right: #{$i}px !important; }
+      .pt-sm-#{$i} { padding-top: #{$i}px !important; }
+      .pb-sm-#{$i} { padding-bottom: #{$i}px !important; }
+      .px-sm-#{$i} { padding-inline: #{$i}px !important; }
+      .py-sm-#{$i} { padding-block: #{$i}px !important; }
+    }
+  }
+  
+  @media (min-width: 768px) { // Medium devices and up
+    @for $i from 1 through 100 {
+      .p-md-#{$i} { padding: #{$i}px !important; }
+      .pl-md-#{$i} { padding-left: #{$i}px !important; }
+      .pr-md-#{$i} { padding-right: #{$i}px !important; }
+      .pt-md-#{$i} { padding-top: #{$i}px !important; }
+      .pb-md-#{$i} { padding-bottom: #{$i}px !important; }
+      .px-md-#{$i} { padding-inline: #{$i}px !important; }
+      .py-md-#{$i} { padding-block: #{$i}px !important; }
+    }
+  }
+  
+  @media (min-width: 992px) { // Large devices and up
+    @for $i from 1 through 100 {
+      .p-lg-#{$i} { padding: #{$i}px !important; }
+      .pl-lg-#{$i} { padding-left: #{$i}px !important; }
+      .pr-lg-#{$i} { padding-right: #{$i}px !important; }
+      .pt-lg-#{$i} { padding-top: #{$i}px !important; }
+      .pb-lg-#{$i} { padding-bottom: #{$i}px !important; }
+      .px-lg-#{$i} { padding-inline: #{$i}px !important; }
+      .py-lg-#{$i} { padding-block: #{$i}px !important; }
+    }
+  }
+  
+  @media (min-width: 1200px) { // Extra-large devices and up
+    @for $i from 1 through 100 {
+      .p-xl-#{$i} { padding: #{$i}px !important; }
+      .pl-xl-#{$i} { padding-left: #{$i}px !important; }
+      .pr-xl-#{$i} { padding-right: #{$i}px !important; }
+      .pt-xl-#{$i} { padding-top: #{$i}px !important; }
+      .pb-xl-#{$i} { padding-bottom: #{$i}px !important; }
+      .px-xl-#{$i} { padding-inline: #{$i}px !important; }
+      .py-xl-#{$i} { padding-block: #{$i}px !important; }
+    }
+  }
+  

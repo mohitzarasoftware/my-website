@@ -1,0 +1,30 @@
+// Line-height from 1px to 100px with !important
+@for $i from 1 through 100 {
+    .lh-#{$i} { line-height: #{$i}px !important; }
+  }
+  
+  // Responsive line-height classes
+  @media (min-width: 576px) { // Small devices and up
+    @for $i from 1 through 100 {
+      .lh-sm-#{$i} { line-height: #{$i}px !important; }
+    }
+  }
+  
+  @media (min-width: 768px) { // Medium devices and up
+    @for $i from 1 through 100 {
+      .lh-md-#{$i} { line-height: #{$i}px !important; }
+    }
+  }
+  
+  @media (min-width: 992px) { // Large devices and up
+    @for $i from 1 through 100 {
+      .lh-lg-#{$i} { line-height: #{$i}px !important; }
+    }
+  }
+  
+  @media (min-width: 1200px) { // Extra-large devices and up
+    @for $i from 1 through 100 {
+      .lh-xl-#{$i} { line-height: #{$i}px !important; }
+    }
+  }
+  

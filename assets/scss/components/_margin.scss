@@ -1,0 +1,61 @@
+
+// Margin for all sides, left, right, top, bottom, inline (x), and block (y) from 1px to 100px
+@for $i from 1 through 100 {
+    .m-#{$i} { margin: #{$i}px !important; }
+    .ml-#{$i} { margin-left: #{$i}px !important; }
+    .mr-#{$i} { margin-right: #{$i}px !important; }
+    .mt-#{$i} { margin-top: #{$i}px !important; }
+    .mb-#{$i} { margin-bottom: #{$i}px !important; }
+    .mx-#{$i} { margin-inline: #{$i}px !important; }
+    .my-#{$i} { margin-block: #{$i}px !important; }
+  }
+  
+  // Responsive margin classes
+  @media (min-width: 576px) { // Small devices and up
+    @for $i from 1 through 100 {
+      .m-sm-#{$i} { margin: #{$i}px !important; }
+      .ml-sm-#{$i} { margin-left: #{$i}px !important; }
+      .mr-sm-#{$i} { margin-right: #{$i}px !important; }
+      .mt-sm-#{$i} { margin-top: #{$i}px !important; }
+      .mb-sm-#{$i} { margin-bottom: #{$i}px !important; }
+      .mx-sm-#{$i} { margin-inline: #{$i}px !important; }
+      .my-sm-#{$i} { margin-block: #{$i}px !important; }
+    }
+  }
+  
+  @media (min-width: 768px) { // Medium devices and up
+    @for $i from 1 through 100 {
+      .m-md-#{$i} { margin: #{$i}px !important; }
+      .ml-md-#{$i} { margin-left: #{$i}px !important; }
+      .mr-md-#{$i} { margin-right: #{$i}px !important; }
+      .mt-md-#{$i} { margin-top: #{$i}px !important; }
+      .mb-md-#{$i} { margin-bottom: #{$i}px !important; }
+      .mx-md-#{$i} { margin-inline: #{$i}px !important; }
+      .my-md-#{$i} { margin-block: #{$i}px !important; }
+    }
+  }
+  
+  @media (min-width: 992px) { // Large devices and up
+    @for $i from 1 through 100 {
+      .m-lg-#{$i} { margin: #{$i}px !important; }
+      .ml-lg-#{$i} { margin-left: #{$i}px !important; }
+      .mr-lg-#{$i} { margin-right: #{$i}px !important; }
+      .mt-lg-#{$i} { margin-top: #{$i}px !important; }
+      .mb-lg-#{$i} { margin-bottom: #{$i}px !important; }
+      .mx-lg-#{$i} { margin-inline: #{$i}px !important; }
+      .my-lg-#{$i} { margin-block: #{$i}px !important; }
+    }
+  }
+  
+  @media (min-width: 1200px) { // Extra-large devices and up
+    @for $i from 1 through 100 {
+      .m-xl-#{$i} { margin: #{$i}px !important; }
+      .ml-xl-#{$i} { margin-left: #{$i}px !important; }
+      .mr-xl-#{$i} { margin-right: #{$i}px !important; }
+      .mt-xl-#{$i} { margin-top: #{$i}px !important; }
+      .mb-xl-#{$i} { margin-bottom: #{$i}px !important; }
+      .mx-xl-#{$i} { margin-inline: #{$i}px !important; }
+      .my-xl-#{$i} { margin-block: #{$i}px !important; }
+    }
+  }
+  

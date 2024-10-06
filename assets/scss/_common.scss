@@ -1,0 +1,40 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+body, html {
+    font-family: "Overpass", sans-serif !important;
+}
+
+.h-full{
+    height: 100% !important;
+}
+.w-full {
+    width: 100% !important;
+}
+
+
+@media (min-width:1200px){
+    .container {
+        max-width: 90% !important;
+    }
+}
+@mixin xl {
+    @media (max-width:1200px){
+        @content;
+    }
+}
+@mixin lg {
+    @media (max-width:991px){
+        @content;
+    }
+}
+@mixin md {
+    @media (max-width:767px){
+        @content;
+    }
+}
+@mixin sm {
+    @media (max-width:576px){
+        @content;
+    }
+}

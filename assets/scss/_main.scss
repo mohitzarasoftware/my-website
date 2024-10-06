@@ -1,0 +1,399 @@
+$theme1:#e6241d;
+$white:#fff;
+$black:#000;
+
+
+/* navbar css start */
+.navbar {
+    background-color: $white;
+    & .navbar-toggler {
+        color: $theme1;
+    }
+}
+@media (min-width:1200px){
+    .drop-menu {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        top: 150%;
+        transition: all 0.3s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+    }
+    .nav-item {
+        &:hover {
+            & .drop-menu {
+                top: 100%;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    .nav-link {
+        transition: all 0.3s ease-in-out;
+        & i {
+            margin-top: -4px;
+        }
+        &:hover {
+            color: $theme1;
+        }
+    }
+    .drop-link {
+        color: $black;
+        line-height: normal;
+        & img {
+            margin-top: -3px;
+        }
+        &:hover {
+            background-color: $theme1;
+            color: $white;
+            & img {
+                filter: brightness(100);
+            }
+        }
+    }
+}
+.navbar-offcanvas {
+    max-width: 320px;
+    & .drop-link {
+        color: lighten($black, 30);
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            color: $theme1;
+        }
+    }
+}
+/* navbar css end */
+
+// services section start
+.service-card {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: all 0.3s ease-in-out;
+    & p {
+        color: lighten($black, 20);
+    }
+    & .service-card-link {
+        color: #000;
+        transform: translateX(-100px);
+        gap: 30px;
+        transition: all 0.5s ease-in-out;
+        & i {
+            margin-top: -3px;
+        }
+    }
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+       
+        & .service-card-link {
+            gap: 6px;
+            transform: unset;
+            color:$theme1;
+        }
+    }
+}
+// services section end
+
+// content section start
+.content-card {
+    & p {
+        font-size: 15px;
+        line-height: 26px;
+        margin-bottom: 12px;
+    }
+    & ul,ol {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 22px;
+        margin-bottom: 12px;
+    }
+    & li {
+        font-size: 15px;
+    }
+    & h2 {
+        font-size: 22px;
+        margin-bottom: 12px;
+        font-weight: 600;
+    }
+}
+@include md {
+    .content-card {
+        & p {
+            font-size: 14px;
+            line-height: 25px;
+        }
+        & ul {
+            gap: 8px;
+        }
+        & li {
+            font-size: 14px;
+        }
+        & h2 {
+            font-size: 18px;
+        }
+    }
+}
+// content section end
+
+// faq section start
+.faq-section {
+    & .accordion-button {
+        &:not(.collapsed){
+            background-color:lighten($black, 90);
+            color: $theme1;
+        }
+    }
+    & .accordion-body {
+        font-size: 15px;
+        line-height: 27px;
+        & p {
+            font-size: 15px;
+            line-height: 27px;
+            margin-bottom: 10px;
+        }
+    }
+}
+@include md {
+    .faq-section {
+        & .accordion-body {
+            font-size: 14px;
+            line-height: 25px;
+            & p {
+                font-size: 14px;
+                line-height: 25px;
+            }
+        }
+    }
+}
+// faq section end
+
+// footer start 
+.footer {
+    background-color: #283546;
+    & .footer-text {
+        letter-spacing: 0.5px;
+    }
+}
+// footer end
+
+// fixed btn start
+.fixed-btn {
+    right: 20px;
+    bottom: 20px;
+    background-color: $theme1;
+    border-radius: 30px 8px 30px 30px;
+}
+// fixed btn end
+
+// query modal start 
+.query-modal {
+    & .modal-dialog {
+        max-width: 40%;
+    }
+    & .query-modal-btn {
+        background-color: $theme1;
+        color: $white;
+        transition: all 0.3s ease-out;
+        &:hover {
+            background-color: darken($theme1, 20);
+        }
+    }
+}
+@include md {
+    .query-modal {
+        & .modal-dialog {
+            max-width: 100%;
+        }
+    }
+}
+// query modal end
+
+
+// page heading section start
+.page-heading-section {
+    height: 230px;
+    background-color: #f5f1fe;
+    & .page-heading {
+        & span {
+            color: $theme1;
+        }
+    }
+}
+// page heading section end
+
+
+// main section css start 
+.main-section {
+    background-color: #f5f1fe;
+    & .main-card {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+    & .main-card-inner {
+        background-color: #eef3f8;
+    }
+    & .main-sidebar {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        & .sidebar-btn {
+            background-color: $theme1;
+            color: $white;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                background-color: darken($theme1, 20);
+            }
+        }
+        & .main-sidebar-header {
+            background-color: $theme1;
+        }
+    }
+    & .range-input { 
+        height: 22px; /* needed for Firefox*/
+        -webkit-appearance :none;
+        -moz-appearance :none;
+        appearance :none;
+        background: none;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 6px;
+    }
+    & .range-input:focus-visible,
+    .range-input:hover{
+        --p: 25%;
+    }
+    & .range-input:active,
+    .range-input:focus-visible{
+        --_b: 22px;
+    }
+    & .range-input[type="range" i]::-webkit-slider-thumb{
+        height: 22px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        box-shadow: 0 0 0 var(--_b,4px) inset red;
+        border-image: linear-gradient(90deg,red 50%,#ababab 0) 0 1/calc(50% - 5px/2) 100vw/0 calc(100vw + 0px);
+        -webkit-appearance: none;
+        appearance: none;
+        transition: .3s;
+    }
+    & input[type="range"]::-moz-range-thumb {
+        height: 22px;
+        width: 22px;
+        background: none;
+        border-radius: 50%;
+        box-shadow: 0 0 0 var(--_b,5px) inset red;
+        border-image: linear-gradient(90deg,red 50%,#ababab 0) 0 1/calc(50% - 4px/2) 100vw/0 calc(100vw + 5px);
+        -moz-appearance: none;
+        appearance: none;
+        transition: .3s;
+    }
+    & .code-copy-input-main {
+        background-color: #f1eff9;
+        min-height: 45px;
+    }
+    & .select-img-label {
+        background-color: $theme1;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        color: $white;
+        border: 1.4px solid $theme1;
+        cursor: pointer !important;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            background-color: transparent;
+            color: $theme1;
+        }
+    }
+    & .download-btn {
+        background-color: #333;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        border: 1.4px solid #333;
+        &:hover {
+            background-color: transparent;
+            color: #333;
+        }
+    }
+}
+// main section css end
+
+// border radius page start
+.border-radius-section {
+    & .output-blob{
+        background-color: #eef3f8;
+        min-height: 250px;
+    }
+    & #blob{
+        height: 300px;
+        width: 300px;
+        background: linear-gradient(#e6241d, #f74a44 );
+        box-shadow: 15px 20px 30px rgba(0,0,0,0.15);
+    }
+    & .blog-size-input {
+      border: 1px solid #a0a0b0;
+    }
+}
+// border radius page end
+
+
+// gradient bg page start
+.gradient-bg-section {
+    & .degree-knob {
+        border: 2px solid $theme1;
+    }
+    & .degree-value {
+        transform: translate(-50%, -50%);
+        color: $theme1;
+    }
+    & .degree-handle {
+        width: 10px;
+        height: 10px;
+        background-color: $theme1;
+        cursor: pointer;
+    }
+    & .gradient-add-colors {
+        border: 1px solid #929292;
+        padding: 12px;
+        border-radius: 7px  ;
+        & .color-input {
+            height: 40px ;
+            width: 40px;
+            border: 0;
+            padding: 0;
+            border-radius: 6px;
+        }
+        & .hex-code {
+            border-radius: 5px;
+            border: 1px solid #929292;
+            padding: 7px;
+            font-weight: 500;
+            color: $black;
+            outline: none;
+            width: 100px;
+            font-size: 15px;
+        }
+        & .remove-btn {
+            font-size:22px;
+            color: lighten($black, 40);
+        }
+    }
+    & .add-color-btn {
+        background-color: #333;
+        color: $white;
+    }
+}
+@include md {
+    .gradient-bg-section {
+        & .gradient-add-colors {
+            padding: 8px;
+            & .color-input {
+                height: 30px ;
+                width: 30px;
+            }
+            & .hex-code {
+                padding: 5px;
+                width: 80px;
+                font-size: 14px;
+            }
+            & .remove-btn {
+                font-size:20px;
+            }
+        }
+    }
+}
+// gradient bg page end

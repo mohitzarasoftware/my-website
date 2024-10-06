@@ -1,0 +1,54 @@
+// Custom width and height classes from 1px to 1000px
+@for $i from 1 through 1000 {
+  .w-#{$i} {
+    width: #{$i}px !important;
+  }
+  .h-#{$i} {
+    height: #{$i}px !important;
+  }
+}
+
+// Responsive custom width and height classes
+@media (min-width: 576px) { // For small devices and up
+  @for $i from 1 through 1000 {
+    .w-sm-#{$i} {
+      width: #{$i}px !important;
+    }
+    .h-sm-#{$i} {
+      height: #{$i}px !important;
+    }
+  }
+}
+
+@media (min-width: 768px) { // For medium devices and up
+  @for $i from 1 through 1000 {
+    .w-md-#{$i} {
+      width: #{$i}px !important;
+    }
+    .h-md-#{$i} {
+      height: #{$i}px !important;
+    }
+  }
+}
+
+@media (min-width: 992px) { // For large devices and up
+  @for $i from 1 through 1000 {
+    .w-lg-#{$i} {
+      width: #{$i}px !important;
+    }
+    .h-lg-#{$i} {
+      height: #{$i}px !important;
+    }
+  }
+}
+
+@media (min-width: 1200px) { // For extra-large devices and up
+  @for $i from 1 through 1000 {
+    .w-xl-#{$i} {
+      width: #{$i}px !important;
+    }
+    .h-xl-#{$i} {
+      height: #{$i}px !important;
+    }
+  }
+}
