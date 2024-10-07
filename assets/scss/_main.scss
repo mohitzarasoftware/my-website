@@ -2,7 +2,15 @@ $theme1:#e6241d;
 $white:#fff;
 $black:#000;
 
-
+.common-btn {
+    background-color:$theme1 ;
+    transition: all 0.3s ease-in-out;
+    color: $white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;  
+    &:hover {
+        background-color: darken($theme1, 10);
+    }
+}
 /* navbar css start */
 .navbar {
     background-color: $white;
@@ -219,7 +227,6 @@ $black:#000;
 }
 // page heading section end
 
-
 // main section css start 
 .main-section {
     background-color: #f5f1fe;
@@ -330,7 +337,6 @@ $black:#000;
 }
 // border radius page end
 
-
 // gradient bg page start
 .gradient-bg-section {
     & .degree-knob {
@@ -397,3 +403,27 @@ $black:#000;
     }
 }
 // gradient bg page end
+
+// img convert section start 
+.img-convert-section {
+    & .main-card-inner {
+        min-height: 200px;
+        border: 1px dashed $theme1;
+    }
+    & .main-card-img-preview {
+        width: 70%;
+    }
+    & .remove-btn {
+        right: -15px;
+        top: -20px;
+    }
+}
+// img convert section end
+
+// css minify section start
+.minify-section {
+    & textarea {
+        outline: none;
+    }
+}
+// css minify section end

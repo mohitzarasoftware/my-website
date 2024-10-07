@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Css Filter Generate</title>
+    <title> Css Minify</title>
     <!-- jquery link -->
     <script src="assets/js/jquery.min.js"></script>
     <!-- bootstrap css -->
@@ -133,7 +133,7 @@
         <div class="container h-full">
             <div class="row h-full align-items-end text-center">
                 <div class="col-lg-10 mx-auto">
-                    <h1 class="fs-lg-32 fs-md-28 fs-24 fw-bold page-heading"> Image <span>Convert</span></h1>
+                    <h1 class="fs-lg-32 fs-md-28 fs-24 fw-bold page-heading">SCSS to CSS &  <span>CSS to SCSS Converter</span></h1>
                     <p class="mb-0 lh-md-29 lh-26 fs-md-16 fs-14 ">Effortlessly create stunning visual effects for your website with our easy-to-use CSS Filter Generator. Customize blur, brightness, contrast, and more with real-time previews. Perfect for web designers looking to enhance their projects with professional-grade filters in just a few clicks!</p>
                 </div>
             </div>
@@ -142,57 +142,36 @@
     <!-- page heading section end -->
 
     <!-- main section start -->
-    <section class="py-md-50 py-40 main-section img-convert-section">
+    <section class="py-md-50 py-40 main-section minify-section">
         <div class="container">
-            <div class="row justify-content-between gap-lg-0 gap-15 gx-xl-5">
-                <div class="col-lg-7">
+            <div class="row justify-content-between gap-lg-0 gap-15">
+                <div class="col-lg-6 mx-auto">
                     <div class="main-card border br-8 bg-white p-md-25 p-15 sticky-top top-0 z-0">
-                        <label for="imageUpload" class=" main-card-inner w-full p-md-20 p-12 overflow-hidden position-relative br-7 d-flex justify-content-center">
-                            <div class="main-card-img-preview position-relative">
-                                <img id="uploadedImagePreview" src="#" alt="Preview" class="w-full" style="display:none;" />
-                                <button id="removeBtn" class="d-none remove-btn position-absolute p-0 text-danger border-0 bg-transparent fs-32"><i class="ri-close-circle-fill"></i></button>
-                            </div>
-                        </label>
-                        <div class="d-flex align-items-center justify-content-between mt-md-30 mt-20 gap-sm-0 gap-15 flex-sm-row flex-column">
-                            <div class=" text-center d-flex align-items-center justify-content-center">
-                                <label for="imageUpload" class="select-img-label px-md-40 px-30 py-md-14 py-10 br-7 fs-md-18 fs-16 fw-medium d-inline-flex align-items-center justify-content-center gap-10">
-                                    <i class="ri-upload-cloud-line fs-20"></i>
-                                    Upload Image
-                                </label>
-                                <input type="file" id="imageUpload" hidden accept="image/*">
-                            </div>
-                            <div>
-                                <select id="formatSelector" class="form-select h-50 w-120">
-                                    <option value="jpeg">JPEG</option>
-                                    <option value="png">PNG</option>
-                                    <option value="gif">GIF</option>
-                                    <option value="bmp">BMP</option>
-                                    <option value="webp">WEBP</option>
-                                </select>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <button id="convertBtn" class="download-btn px-md-25 px-20 py-md-14 py-12 br-7 fs-md-18 fs-16 fw-medium d-inline-flex align-items-center justify-content-center gap-10">
-                                    Convert
-                                    <i class="ri-arrow-right-line"></i>
-                                </button>
-                            </div>
+                        <div class="fs-md-24 fs-20 fw-bold mb-8 text-center">Scss To Css</div>
+                        <div class=" main-card-inner border w-full overflow-hidden p-12 h-md-200 h-160 position-relative br-7 d-flex justify-content-center">
+                            <textarea id="scss-input" class="border-0 bg-transparent h-full w-full" placeholder="Enter your SCSS code here..."></textarea>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mt-30">
+                            <button id="convertToCSSBtn" class="common-btn border-0 br-6 py-9 px-40">Convert To Css</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="border main-sidebar br-8 bg-white sticky-top top-0 z-0 overflow-hidden">
-                        <div class="main-sidebar-header px-14 py-8">
-                            <div class="fs-md-18 fs-17 fw-bold text-white">
-                               Converted Image
-                            </div>
+                <div class="col-lg-6 mx-auto">
+                    <div class="main-card border br-8 bg-white p-md-25 p-15 sticky-top top-0 z-0">
+                        <div class="fs-md-24 fs-20 fw-bold mb-8 text-center">Css To Scss</div>
+                        <div class=" main-card-inner border w-full overflow-hidden p-12 h-md-200 h-160 position-relative br-7 d-flex justify-content-center">
+                            <textarea id="css-input" class="border-0 bg-transparent h-full w-full" placeholder="Enter your CSS code here..."></textarea>
                         </div>
-                        <div class="main-sidebar-body p-md-15 p-12">
-                            <img id="convertedImagePreview" alt="Image Preview" class="w-full" />
+                        <div class="d-flex align-items-center justify-content-center mt-30">
+                            <button id="convertToSCSSBtn" class="common-btn border-0 br-6 py-9 px-40">Convert To Scss</button>
                         </div>
-                        <div class="main-sidebar-footer border-top p-12 mt-10">
-                            <div class="d-flex ">
-                                <a id="downloadLink" class="w-auto px-3 sidebar-btn border p-9 br-5 w-full d-flex align-items-center gap-4 justify-content-center text-decoration-none">Download Converted Image as<i class="ri-download-cloud-line"></i></a>
-                            </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 mx-auto mt-40">
+                    <div class="main-card border br-8 bg-white p-md-25 p-15 sticky-top top-0 z-0">
+                        <div class="text-center mb-5 fw-bold fs-md-23 fs-20"> Output:</div>
+                        <div id="output" class=" main-card-inner border w-full overflow-hidden p-12 h-md-200 h-160 position-relative br-7 d-flex justify-content-center">
+                            <textarea id="formatted-output" class="border-0 bg-transparent h-full w-full" ></textarea>
                         </div>
                     </div>
                 </div>
@@ -410,7 +389,7 @@
     <!-- script links  -->
     <script src="assets/js/script.js"></script>
     <script src="assets/libs/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/image-convert.js"></script>
+    <script src="assets/js/css-to-scss.js"></script>
 
     <!-- quiry modal  -->
     <div class="modal fade query-modal" id="suggestion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
