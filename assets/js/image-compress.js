@@ -1,68 +1,68 @@
-const imageUpload = document.getElementById('imageUpload');
-        const compressedImage = document.getElementById('compressedImage');
-        const imageContainer = document.getElementById('imageContainer');
-        const downloadBtn = document.getElementById('downloadBtn');
-        const originalSizeText = document.getElementById('originalSize');
-        const compressedSizeText = document.getElementById('compressedSize');
-        const loader = document.getElementById('loader');
-        const removeImageBtn = document.getElementById('removeImageBtn');
+const imageInput = document.getElementById('imageInput');
+const imageContainer = document.getElementById('imageContainer');
+const uploadedImage = document.getElementById('uploadedImage');
+const removeImage = document.getElementById('removeImage');
+const originalSizeElement = document.getElementById('originalSize');
+const compressedSizeElement = document.getElementById('compressedSize');
+const downloadLink = document.getElementById('downloadLink');
+const imageInfo = document.getElementById('imageInfo');
+const imagePreview = document.getElementById('imagePreview');
 
-        imageUpload.addEventListener('change', () => {
-            const file = imageUpload.files[0];
-            if (!file) {
-                alert('Please upload an image first.');
-                return;
-            }
+let canvas = document.createElement('canvas');
+let originalFileSize = 0;
 
-            // Display original size
-            const originalSizeKB = (file.size / 1024).toFixed(2); // in KB
-            originalSizeText.textContent = `Original Size: ${originalSizeKB} KB`;
+imageInput.addEventListener('change', function (event) {
+    const file = event.target.files[0];
 
-            const reader = new FileReader();
-            reader.onload = function(event) {
-                const img = new Image();
-                img.src = event.target.result;
+    if (file) {
+        const reader = new FileReader();
+        originalFileSize = (file.size / 1024).toFixed(2); // Size in KB
 
-                img.onload = function() {
-                    loader.style.display = 'block'; // Show loader
+        reader.onload = function (e) {
+            const img = new Image();
+            img.src = e.target.result;
+            uploadedImage.src = img.src; // Display image in preview
+            imageContainer.style.display = "block";
+            imagePreview.classList.remove('d-none');
+            removeImage.classList.remove('d-none');
+            removeImage.classList.add('d-flex'); // Add d-flex to display the remove button
 
-                    const canvas = document.createElement('canvas');
-                    const ctx = canvas.getContext('2d');
-                    
-                    // Set canvas dimensions
-                    canvas.width = img.width;
-                    canvas.height = img.height;
+            img.onload = function () {
+                const ctx = canvas.getContext('2d');
+                const MAX_WIDTH = 800; // Set a max width for the compressed image
+                const scaleSize = MAX_WIDTH / img.width;
+                canvas.width = MAX_WIDTH;
+                canvas.height = img.height * scaleSize;
 
-                    // Draw the image on the canvas
-                    ctx.drawImage(img, 0, 0);
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-                    // Compress the image (keep quality high)
-                    canvas.toBlob((blob) => {
-                        loader.style.display = 'none'; // Hide loader
-                        const url = URL.createObjectURL(blob);
-                        compressedImage.src = url;
-                        imageContainer.style.display = 'block';
-                        downloadBtn.style.display = 'flex';
+                // Compress image
+                const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.7); // Compression quality (0.7)
+                
+                // Convert compressed dataURL to Blob for size comparison and download
+                fetch(compressedDataUrl)
+                    .then(res => res.blob())
+                    .then(blob => {
+                        const compressedFileSize = (blob.size / 1024).toFixed(2); // Compressed size in KB
+                        downloadLink.href = URL.createObjectURL(blob); // Provide download link
 
-                        // Display compressed size
-                        const compressedSizeKB = (blob.size / 1024).toFixed(2); // in KB
-                        compressedSizeText.textContent = `Compressed Size: ${compressedSizeKB} KB`;
-
-                        // Set the download link
-                        downloadBtn.href = url; // Update the download link to the compressed image
-                        downloadBtn.download = 'compressed_image.jpg'; // Set the default file name
-                    }, 'image/jpeg', 0.95); // Set to 'image/jpeg' with high quality of 0.95
-                };
+                        // Show original and compressed sizes
+                        originalSizeElement.textContent = `${originalFileSize} KB`;
+                        compressedSizeElement.textContent = `${compressedFileSize} KB`;
+                        imageInfo.classList.remove('d-none');
+                    });
             };
-            reader.readAsDataURL(file);
-        });
+        };
 
-        // Remove Image Button Event
-        removeImageBtn.addEventListener('click', () => {
-            compressedImage.src = '';
-            imageContainer.style.display = 'none';
-            downloadBtn.style.display = 'none';
-            imageUpload.value = ''; // Reset the input file
-            originalSizeText.textContent = '';
-            compressedSizeText.textContent = '';
-        });
+        reader.readAsDataURL(file);
+    }
+});
+
+removeImage.addEventListener('click', function () {
+    imageInput.value = "";
+    imageContainer.style.display = "none";
+    imageInfo.classList.add('d-none');
+    downloadLink.classList.add('done');
+    removeImage.classList.remove('d-flex'); // Remove d-flex class when hidden
+    removeImage.classList.add('d-none'); // Add d-none to hide the button
+});

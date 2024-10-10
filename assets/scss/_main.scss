@@ -11,6 +11,22 @@ $black:#000;
         background-color: darken($theme1, 10);
     }
 }
+
+// loader 
+.loader {
+    border: 4px solid $theme1;
+    border-radius: 50%;
+    border-top: 4px solid #fff;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    display: none; /* Hidden initially */
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 /* navbar css start */
 .navbar {
     background-color: $white;
@@ -225,6 +241,12 @@ $black:#000;
         }
     }
 }
+@include md {
+    .page-heading-section {
+        height:auto ;
+        padding-top: 50px;
+    }
+}
 // page heading section end
 
 // main section css start 
@@ -427,3 +449,30 @@ $black:#000;
     }
 }
 // css minify section end
+
+
+// image compress section start
+@include md {
+    .image-compress-section {
+        & .main-card-inner {
+            min-height: 150px;
+        }
+    }
+}
+// image compress section end
+
+
+// bg remove section start
+.bg-remove-section {
+    & .transparent-bg {
+        background: repeating-linear-gradient(
+            45deg,
+            #ccc 0,
+            #ccc 25%,
+            #fff 25%,
+            #fff 50%
+        );
+        background-size: 10px 10px;
+    }
+}
+// bg remove section end

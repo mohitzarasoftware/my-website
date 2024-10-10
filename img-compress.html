@@ -157,25 +157,29 @@
     <!-- page heading section end -->
 
     <!-- main section start -->
-    <section class="py-md-50 py-40 main-section img-convert-section">
+    <section class="py-md-50 py-40 main-section img-convert-section image-compress-section">
         <div class="container">
             <div class="row justify-content-between gap-lg-0 gap-15 gx-xl-5">
                 <div class="col-lg-7">
                     <div class="main-card border br-8 bg-white p-md-25 p-15 sticky-top top-0 z-0">
                         <label for="imageUpload" class=" main-card-inner w-full p-md-20 p-12 overflow-hidden position-relative br-7 d-flex justify-content-center">
                             <div class="main-card-img-preview position-relative">
-                                <img id="compressedImage" src="" alt="Upload Preview" class="w-full" />
-                                <button id="removeImageBtn" class="d-none remove-btn position-absolute p-0 text-danger border-0 bg-transparent fs-32"><i class="ri-close-circle-fill"></i></button>
+                                <div class="image-preview transparentbg position-relative" id="imageContainer" style="display: none;">
+                                    <div id="imagePreview" class="d-none bg-white br-5">
+                                        <img id="uploadedImage" src="" alt="Upload Preview" class="w-full h-fll" />
+                                    </div>
+                                    <button id="removeImage" class="remove-btn position-absolute p-0 text-danger d-none border-0 bg-transparent fs-32"><i class="ri-close-circle-fill"></i></button>
+                                </div>
                             </div>
                         </label>
                         <div class="d-flex align-items-center justify-content-center mt-md-30 mt-20 gap-sm-0 gap-15 flex-sm-row flex-column">
                             <div class=" text-center d-flex align-items-center flex-column text-center justify-content-center">
-                                <label for="imageUpload" class="select-img-label px-md-40 px-30 py-md-14 py-10 br-7 fs-md-18 fs-16 fw-medium d-inline-flex align-items-center justify-content-center gap-10">
+                                <label for="imageInput" class="select-img-label px-md-40 px-30 py-md-14 py-10 br-7 fs-md-18 fs-16 fw-medium d-inline-flex align-items-center justify-content-center gap-10">
                                     <i class="ri-upload-cloud-line fs-20"></i>
                                     Upload Image
                                 </label>
+                                <input type="file" id="imageInput" hidden accept="image/*">
                                 <p class="upload-title mb-0 mt-10">or drop photos here</p>
-                                <input type="file" id="imageUpload" hidden accept="image/*">
                             </div>
                         </div>
                     </div>
@@ -188,12 +192,14 @@
                             </div>
                         </div>
                         <div class="main-sidebar-body p-md-15 p-12">
-                            <p id="originalSize" class="fw-medium mb-2"></p>
-                            <p id="compressedSize" class="fw-medium mb-2"></p>
+                            <div id="imageInfo" class="d-none">
+                                <p class="fw-medium mb-14"><span class="fw-bold">Original Size:</span> <span id="originalSize"></span></p>
+                                <p class="fw-medium mb-0"><span class="fw-bold">Compressed Size:</span> <span id="compressedSize"></span></p>
+                            </div>
                         </div>
                         <div class="main-sidebar-footer border-top p-12 mt-10">
                             <div class="d-flex ">
-                                <button id="downloadBtn" class="w-auto px-3 sidebar-btn border p-9 br-5 w-full d-flex align-items-center gap-4 justify-content-center text-decoration-none">Download Image<i class="ri-download-cloud-line"></i></button>
+                                <a id="downloadLink" href="" class="w-auto px-3 sidebar-btn border p-9 br-5 w-full d-flex align-items-center gap-4 justify-content-center text-decoration-none">Download Image<i class="ri-download-cloud-line"></i></a>
                             </div>
                         </div>
                     </div>

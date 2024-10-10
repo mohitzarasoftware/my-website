@@ -3,240 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile-Friendly Gradient Generator</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Image Resize Tool</title>
     <style>
-        .color-inputs {
-            margin-bottom: 20px;
-        }
-        .gradient-box {
-            height: 200px;
-            width: 100%;
-            border: 1px solid #000;
-            margin-bottom: 15px;
-        }
-        .remove-btn {
-            cursor: pointer;
-            background-color: red;
-            color: white;
-            border: none;
-            padding: 2px 6px;
-            margin-left: 5px;
-        }
-        .hex-code {
-            width: 100px;
-            text-align: center;
-        }
-        .css-code-box {
-            padding: 10px;
-            background-color: #f1f1f1;
-            border: 1px solid #ddd;
-            margin-bottom: 10px;
-            position: relative;
-        }
-        .copy-btn {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            cursor: pointer;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 2px 8px;
-        }
-        /* Circular degree slider styling for mobile */
-        .degree-slider-container {
-            position: relative;
-            width: 80px;
-            height: 80px;
+        body {
+            font-family: Arial, sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            margin: auto;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
         }
-        .degree-knob {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: conic-gradient(#ddd, #fff);
-            position: relative;
+        #preview {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            display: none;
         }
-        .degree-knob::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background-color: #000;
-        }
-        .degree-value {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 1rem;
-            font-weight: bold;
-        }
-        .degree-handle {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #000;
-            border-radius: 50%;
-            cursor: pointer;
+        img {
+            max-width: 100%;
+            max-height: 100%;
         }
     </style>
 </head>
 <body>
 
-<div class="container mt-4">
-    <div id="color-container" class="color-inputs d-flex align-items-center gap-2 justify-content-between">
-        <!-- Color boxes will be added dynamically here -->
+    <h1>Image Resize Tool</h1>
+    <input type="file" id="imageInput" accept="image/*">
+    <br>
+    <label for="width">Width:</label>
+    <input type="number" id="width" placeholder="Enter width">
+    <label for="height">Height:</label>
+    <input type="number" id="height" placeholder="Enter height">
+    <br>
+    <label>
+        <input type="checkbox" id="maintainAspectRatio"> Maintain Aspect Ratio
+    </label>
+    <br>
+    <button id="resizeButton">Resize Image</button>
+
+    <div id="preview">
+        <h2>Resized Image:</h2>
+        <img id="resizedImage" src="" alt="Resized Image">
     </div>
 
-    <!-- Custom Degree Circular Slider for Mobile -->
-    <div class="degree-slider-container mb-3">
-        <div class="degree-knob" id="degree-knob">
-            <div class="degree-handle" id="degree-handle"></div>
-            <div class="degree-value" id="degree-value">90°</div>
-        </div>
-    </div>
+    <script>
+        const imageInput = document.getElementById('imageInput');
+        const widthInput = document.getElementById('width');
+        const heightInput = document.getElementById('height');
+        const resizeButton = document.getElementById('resizeButton');
+        const resizedImage = document.getElementById('resizedImage');
+        const preview = document.getElementById('preview');
+        const aspectRatioCheckbox = document.getElementById('maintainAspectRatio');
 
-    <button id="add-color-btn" class="btn btn-success mb-3">Add Color</button>
+        let originalImage;
+        let originalWidth, originalHeight;
 
-    <div class="gradient-box" id="gradient-box"></div>
-
-    <div class="css-code-box" id="css-code-box">
-        <span id="css-code"></span>
-        <button class="copy-btn" id="copy-btn">Copy</button>
-    </div>
-</div>
-
-<script>
-    let colorCount = 2; // Starting with 2 colors
-    const maxColors = 5; // Maximum 5 colors
-    const colorContainer = document.getElementById('color-container');
-    const gradientBox = document.getElementById('gradient-box');
-    const cssCodeBox = document.getElementById('css-code');
-    const copyButton = document.getElementById('copy-btn');
-
-    const degreeKnob = document.getElementById('degree-knob');
-    const degreeHandle = document.getElementById('degree-handle');
-    const degreeValueDisplay = document.getElementById('degree-value');
-    let currentDegree = 90; // Default degree
-    const knobRadius = 40; // Half the size of the knob for positioning (smaller radius for mobile)
-
-    // Function to create a color input with hex code display
-    function createColorInput(id, value = '#000000') {
-        const colorDiv = document.createElement('div');
-        colorDiv.classList.add('d-flex', 'flex-column', 'gap-2', 'justify-content-center', 'position-relative');
-
-        const input = document.createElement('input');
-        input.type = 'color';
-        input.id = `color${id}`;
-        input.value = value;
-        input.classList.add('mx-auto');
-        input.addEventListener('input', () => {
-            hexInput.value = input.value; // Update hex code when color changes
-            updateGradient();
+        imageInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                originalImage = new Image();
+                originalImage.src = e.target.result;
+                originalImage.onload = () => {
+                    originalWidth = originalImage.width;
+                    originalHeight = originalImage.height;
+                };
+            };
+            reader.readAsDataURL(file);
         });
 
-        // Hex code input
-        const hexInput = document.createElement('input');
-        hexInput.type = 'text';
-        hexInput.classList.add('hex-code', 'mx-auto');
-        hexInput.value = value; // Initially set to the color value
-        hexInput.readOnly = true;
-
-        // Close button to remove the color input
-        const closeBtn = document.createElement('button');
-        closeBtn.classList.add('remove-btn', 'position-absolute', 'top-0', 'end-0');
-        closeBtn.textContent = 'X';
-        closeBtn.addEventListener('click', () => {
-            if (colorContainer.children.length > 2) { // Ensure at least 2 colors remain
-                colorDiv.remove();
-                updateGradient();
+        widthInput.addEventListener('input', () => {
+            if (aspectRatioCheckbox.checked && originalWidth && originalHeight) {
+                const ratio = originalHeight / originalWidth;
+                heightInput.value = Math.round(parseInt(widthInput.value) * ratio);
             }
         });
 
-        colorDiv.appendChild(input);
-        colorDiv.appendChild(hexInput); // Add hex input next to the color picker
-        colorDiv.appendChild(closeBtn);
-
-        return colorDiv;
-    }
-
-    // Function to update the gradient background and CSS code
-    function updateGradient() {
-        const colors = [...colorContainer.querySelectorAll('input[type="color"]')].map(input => input.value);
-        const degree = currentDegree;
-        const cssGradient = `linear-gradient(${degree}deg, ${colors.join(', ')})`;
-        gradientBox.style.background = cssGradient;
-        cssCodeBox.textContent = `background: ${cssGradient};`;
-    }
-
-    // Function to position the degree handle based on the current degree
-    function updateHandlePosition(degree) {
-        const radian = (degree - 90) * (Math.PI / 180); // Convert to radian and adjust to start from top
-        const x = knobRadius + Math.cos(radian) * knobRadius; // x coordinate
-        const y = knobRadius + Math.sin(radian) * knobRadius; // y coordinate
-        degreeHandle.style.left = `${x - degreeHandle.offsetWidth / 2}px`;
-        degreeHandle.style.top = `${y - degreeHandle.offsetHeight / 2}px`;
-    }
-
-    // Add initial 2 color inputs
-    for (let i = 1; i <= 2; i++) {
-        colorContainer.appendChild(createColorInput(i, i === 1 ? '#ff0000' : '#0000ff'));
-    }
-
-    // Event listener for adding more colors
-    document.getElementById('add-color-btn').addEventListener('click', () => {
-        if (colorContainer.children.length < maxColors) {
-            const nextId = colorContainer.children.length + 1;
-            colorContainer.appendChild(createColorInput(nextId));
-        }
-    });
-
-    // Copy the generated CSS to clipboard
-    copyButton.addEventListener('click', () => {
-        const cssCode = cssCodeBox.textContent;
-        navigator.clipboard.writeText(cssCode).then(() => {
-            alert("CSS code copied!");
+        heightInput.addEventListener('input', () => {
+            if (aspectRatioCheckbox.checked && originalWidth && originalHeight) {
+                const ratio = originalWidth / originalHeight;
+                widthInput.value = Math.round(parseInt(heightInput.value) * ratio);
+            }
         });
-    });
 
-    // Degree Knob interaction
-    let isDragging = false;
-    degreeHandle.addEventListener('mousedown', () => {
-        isDragging = true;
-    });
+        resizeButton.addEventListener('click', () => {
+            const width = parseInt(widthInput.value);
+            const height = parseInt(heightInput.value);
 
-    document.addEventListener('mouseup', () => {
-        isDragging = false;
-    });
+            if (!originalImage || isNaN(width) || isNaN(height)) {
+                alert('Please upload an image and enter valid width and height.');
+                return;
+            }
 
-    document.addEventListener('mousemove', (event) => {
-        if (isDragging) {
-            const rect = degreeKnob.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            const deltaX = event.clientX - centerX;
-            const deltaY = event.clientY - centerY;
-            const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
-            currentDegree = (angle + 90 + 360) % 360; // Adjust angle to range [0, 360]
-            degreeValueDisplay.textContent = `${Math.round(currentDegree)}°`;
-            updateHandlePosition(currentDegree); // Update handle position
-            updateGradient();
-        }
-    });
+            const canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(originalImage, 0, 0, width, height);
 
-    // Initialize with the default gradient and handle position
-    updateHandlePosition(currentDegree);
-    updateGradient();
-</script>
+            resizedImage.src = canvas.toDataURL();
+            preview.style.display = 'block';
+        });
+    </script>
 
 </body>
 </html>
